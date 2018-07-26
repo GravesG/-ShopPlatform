@@ -121,7 +121,7 @@ public class ShopManagementController {
 		List<ShopCategory> ShopCategoryList = new ArrayList<>();
 		List<Area> areaList = new ArrayList<>();
 		try {
-			ShopCategoryList = shopCategoryService.queryShopCategory(new ShopCategory());
+			ShopCategoryList = shopCategoryService.getShopCategoryList(new ShopCategory());
 			areaList = areaService.getAreaList();
 			modelMap.put("ShopCategoryList", ShopCategoryList);
 			modelMap.put("areaList", areaList);
@@ -241,7 +241,7 @@ public class ShopManagementController {
 			ShopExecution se;
 			try {
 				if(shopImg ==null) {
-					se = shopService.addShop(shop,null);
+					se = shopService.modifyShop(shop,null);
 				}else {
 					ImageHolder imageHolder = new ImageHolder(shopImg.getOriginalFilename(), shopImg.getInputStream());
 					se = shopService.modifyShop(shop,imageHolder );

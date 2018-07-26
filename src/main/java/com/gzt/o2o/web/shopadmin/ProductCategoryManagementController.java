@@ -30,9 +30,9 @@ public class ProductCategoryManagementController {
 	@ResponseBody
 	private Result<List<ProductCategory>> getProduCtcategoryList(
 			HttpServletRequest request) {
-		Shop shop = new Shop();
+		/*Shop shop = new Shop();
 		shop.setShopId(1L);
-		request.getSession().setAttribute("currentShop",shop);
+		request.getSession().setAttribute("currentShop",shop);*/
 		Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
 		List<ProductCategory> list = null;
 		if (currentShop != null && currentShop.getShopId() > 0) {
